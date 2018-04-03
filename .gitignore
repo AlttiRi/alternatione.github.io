@@ -14,7 +14,7 @@
 
 target
 
-# Package Files #
+# Package Files
 *.jar
 *.war
 *.ear
