@@ -1,5 +1,7 @@
+'use strict';
+
 function simple() {
-  console.warn("It's working");
+  console.log("It's working [AlttiRi.GP.com]");
 }
 
 simple();
