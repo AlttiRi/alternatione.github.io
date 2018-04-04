@@ -38,7 +38,10 @@
 /* Standard tags */
 
 body {
-    margin: 8px;
+  margin: 8px;
+  
+  color: #444;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1 {
