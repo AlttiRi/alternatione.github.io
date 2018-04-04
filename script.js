@@ -1,5 +1,5 @@
 function simple() {
-    console.warn("It's working");
+  console.warn("It's working");
 }
 
 simple();
