@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Center</title>
+  
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;  
+    /*border: 1px dotted;*/
+      -webkit-margin-before: 0;
+      -webkit-margin-after: 0;
+    }
+    
+/*  Не нужно, т.к. у .centering "position: fixed" */    
+/*
+    html, body {    
+      height: 100%;
+      width: 100%;
+    }
+*/
+    
+    .centering {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      
+      flex-direction: column;
+      
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    
+    p {
+      font-size: 32px;
+      background: #60a839;      
+    }
+    
+  </style>
+  
+</head>
+<body>  
+  <p>not center</p>
+  <div class="centering">
+    <p>center</p>
+    <p>center</p>
+    <p>center</p>
+  </div>
+  
+</body>
+</html>
