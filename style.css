@@ -1,24 +1,24 @@
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .centering {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 
-    flex-direction: column;
+  flex-direction: column;
 
-    position: fixed;
-    top: 0;
-    left: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .container {
-    max-width: 900px;
-    margin: 0 auto;
+  max-width: 980px;
+  margin: 0 auto;
 }
 
 
@@ -26,49 +26,49 @@
 /* Disable user agent CSS*/
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /*border: 1px dotted;*/
-
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*border: 1px dotted;*/
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
 }
 
 /* Standard tags */
 
 body {
   margin: 8px;
-  
-  color: #444;
+
+  color: #24292e;
   font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1 {
-    margin-top: 0.67em;
-    margin-bottom: 0.67em;
+  color: #444;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
 }
 
 h2 {
-    margin-top: 0.85em;
-    margin-bottom: 0.85em;
+  margin-top: 0.85em;
+  margin-bottom: 0.85em;
 }
 
 p {
-    margin-top: 1em;
-    margin-bottom: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 ol {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    padding-left: 40px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 40px;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
