@@ -2,8 +2,8 @@
  "start_url": "/index.html",
  "name": "AlttiRi on GitHub",
  "short_name": "AlttiRi",
- "theme_color": "#444",
- "background_color": "#444",
+ "theme_color": "#24292e",
+ "background_color": "#24292e",
  "display": "standalone",
  "icons": [
   {
