@@ -1,0 +1,103 @@
+
+
+.centering-lines {
+  text-align: center;
+}
+
+.centering-boxes { /* Ширина блока – наибольшая длина содержимого */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  /*  background: radial-gradient(farthest-side ellipse at 50% 50%, white, #eee);*/
+}
+
+
+
+.main-container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+
+
+/* Disable user agent CSS*/
+
+* {
+  margin: 0;
+  padding: 0;
+
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+
+  box-sizing: border-box;
+  /*border: 1px dotted;*/
+}
+
+/* Standard tags */
+
+html {
+  height: 100%;
+  width: 100%;
+
+  /*  background: radial-gradient(farthest-side ellipse at 50% 0%, white, #ddd);*/
+}
+
+body {
+  margin: 8px;
+
+  color: #24292e;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1,
+h2 {
+  color: #444;
+}
+
+h1 {
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 0.85em;
+  margin-bottom: 0.85em;
+}
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+ol,
+ul {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 40px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
