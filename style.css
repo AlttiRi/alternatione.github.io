@@ -1,22 +1,35 @@
-.center {
+
+
+.centering-lines {
   text-align: center;
 }
 
-.centering {
+.centering-boxes { /* Ширина блока – длина содержимого */
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
 
-  flex-direction: column;
 
   position: fixed;
   top: 0;
   left: 0;
+  
+  /*  background: radial-gradient(farthest-side ellipse at 50% 50%, white, #eee);*/
 }
 
-.container {
+
+
+.main-container {
   max-width: 980px;
   margin: 0 auto;
 }
