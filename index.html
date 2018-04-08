@@ -17,6 +17,7 @@
   <meta property="og:image" content="https://alttiri.github.io/og-image-square.jpg">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#24292e">
   <meta name="theme-color" content="#24292e">
@@ -30,12 +31,84 @@
   <script defer src="/js/script.js"></script>
   <link rel="stylesheet" href="/css/style.css" media="all">
   <link rel="manifest" href="/manifest.json">
+
+
+
+  <style>
+
+    .outer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .lateral {
+      display: flex;
+      width: 100%;
+    }
+
+    .left-lateral {
+      justify-content: flex-end;
+      background: linear-gradient(to left, #FFF, rgba(0, 0, 0, 0.06));
+    }
+
+    .right-lateral {
+      justify-content: flex-start;
+      background: linear-gradient(to right, #FFF, rgba(0, 0, 0, 0.06));
+    }
+
+    .inner-lateral {
+      padding-top: 8px;
+      margin: 0 12px;
+      max-width: 400px;
+      background-color: white;
+      box-shadow:
+                  0 0 100px 0 rgba(255, 255, 255, 0.5),
+                  0 0 100px 0 rgba(255, 255, 255, 1),
+                  0 0 10px  0 rgba(255, 255, 255, 1),
+                  0 0 50px  0 rgba(255, 255, 255, .5),
+                  0 0 200px 0 rgba(255, 255, 255, 0.5);
+      align-self: flex-start;
+    }
+
+    .medial {
+      padding: 0 16px;
+    }
+
+    @media screen and (min-width: 530px) {
+      .medial {
+        box-sizing: border-box;
+        min-width: 530px;
+        max-width: 530px;
+      }
+    }
+
+    @media screen and (max-width: 529px) {
+      .lateral {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      .inner-lateral {
+        display: none;
+      }
+    }
+
+  </style>
+
 </head>
 
+
 <body>
-  <div class="main-container">
+
+  <div class="outer">
+    <div class="lateral left-lateral">
+      <div class="inner-lateral">.inner <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos officia illo optio voluptates quo repellendus ullam earum accusantium nihil, minima asperiores ducimus sapiente sunt, minus, architecto nostrum perspiciatis numquam. Officia similique ad aut aperiam, consequuntur placeat eveniet sunt, modi culpa deserunt omnis deleniti, excepturi, voluptate facere iure nobis dignissimos ipsa.</p></div>
+    </div>
+    <div class="medial">
     <h1 class="centering-lines">Hi there</h1>
-    <ol>
+    <ul>
       <li>
         <p><a href="/test-page.html">/test-page.html</a></p>
       </li>
@@ -60,7 +133,7 @@
       <li>
         <p><a href="/codecademy/">/codecademy/</a></p>
       </li>
-    </ol>
+    </ul>
 
     <h2>Lorem</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dignissimos doloribus error excepturi expedita
@@ -70,9 +143,8 @@
     </p>
 
     <br>
-    <p><a href="https://github.com/AlttiRi" rel="nofollow noopener" target="_blank">github.com/AlttiRi</a></p>
-    <!--TODO: не умещается на 320px -->
-    <p><a href="https://github.com/AlttiRi/alttiri.github.io" rel="nofollow noopener" target="_blank">github.com/AlttiRi/alttiri.github.io</a></p>
+    <p><a href="https://github.com/AlttiRi?tab=repositories" rel="nofollow noopener" target="_blank">All of my repositories</a></p>
+    <p><a href="https://github.com/AlttiRi/alttiri.github.io" rel="nofollow noopener" target="_blank">Source code of this site</a></p>
 
     <br>
     <br>
@@ -132,6 +204,10 @@
       <li>Possimus reiciendis magnam repudiandae! Nam.</li>
     </ul>
 
+  </div>
+    <div class="lateral right-lateral">
+      <div class="inner-lateral">.inner <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet iusto, hic porro voluptatum. Iusto, beatae, sapiente. Expedita cum eum illo dolorum unde, minima reiciendis ducimus labore! Non adipisci omnis explicabo?</p></div>
+    </div>
   </div>
 
 </body>

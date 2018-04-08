@@ -23,7 +23,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  
+
   /*  background: radial-gradient(farthest-side ellipse at 50% 50%, white, #eee);*/
 }
 
@@ -46,21 +46,21 @@
   -webkit-margin-after: 0;
 
   box-sizing: border-box;
-  /*border: 1px dotted;*/
+/*  border: 1px dotted;*/
 }
 
 /* Standard tags */
 
 html {
   height: 100%;
-  width: 100%;
+  /*width: 100%;*/
 
-  /*  background: radial-gradient(farthest-side ellipse at 50% 0%, white, #ddd);*/
+  /*  Отключил скролл горизонтальный */
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
-  margin: 8px;
-
   color: #24292e;
   font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -91,7 +91,7 @@ ol,
 ul {
   margin-top: 1em;
   margin-bottom: 1em;
-  padding-left: 40px;
+  padding-left: 1.5em;
 }
 
 a {
