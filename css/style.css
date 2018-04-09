@@ -24,7 +24,7 @@
   top: 0;
   left: 0;
 
-  /*  background: radial-gradient(farthest-side ellipse at 50% 50%, white, #eee);*/
+  /*  background: radial-gradient(farthest-side ellipse at 50% 50%, white, rgba(0, 0, 0, 0.06));*/
 }
 
 
@@ -51,18 +51,18 @@
 
 /* Standard tags */
 
-html {
+html, body {
   height: 100%;
-  /*width: 100%;*/
-
-  /*  Отключил скролл горизонтальный */
-  width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
+  width: 100%;
+  
   color: #24292e;
   font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Scrollbar fix */
+html {
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 h1,
@@ -85,6 +85,11 @@ h2 {
 p {
   margin-top: 1em;
   margin-bottom: 1em;
+  margin-left: 0.66em;  
+}
+
+li > p {
+  margin-left: 0;  
 }
 
 ol,
@@ -100,4 +105,17 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin: 2em 0;
+  border: 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .25), rgba(0, 0, 0, 0) 90%);
+}
+
+::selection {
+  background: #24292e;
+  color: #f1f1f1;
 }
