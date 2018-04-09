@@ -124,6 +124,7 @@ hr {
 
 ::-webkit-scrollbar {
   width: 12px;
+  background-color: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
