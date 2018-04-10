@@ -23,15 +23,17 @@
   position: fixed;
   top: 0;
   left: 0;
+}
 
-  /*  background: radial-gradient(farthest-side ellipse at 50% 50%, white, rgba(0, 0, 0, 0.06));*/
+.radial-background {
+  background: radial-gradient(farthest-side ellipse at 50% 50%, white, rgba(0, 0, 0, 0.06));
 }
 
 
-
-.main-container {
+.main-container {  
   max-width: 980px;
   margin: 0 auto;
+  padding-bottom: 0.33em;
 }
 
 
@@ -72,13 +74,13 @@ h2 {
 
 h1 {
   font-size: 2em;
-  margin-top: 0.67em;
+  padding-top: 0.67em;
   margin-bottom: 0.67em;
 }
 
 h2 {
   font-size: 1.5em;
-  margin-top: 0.85em;
+  padding-top: 0.85em;
   margin-bottom: 0.85em;
 }
 
@@ -105,6 +107,11 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+
+button {
+  padding: 2px 6px 3px;  
 }
 
 hr {
