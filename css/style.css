@@ -4,10 +4,16 @@
   text-align: center;
 }
 
-.centering-boxes { /* Ширина блока – наибольшая длина содержимого */
+.centering-boxes-column { /* Ширина блока – наибольшая длина содержимого */
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.centering-boxes-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .center {
@@ -30,7 +36,7 @@
 }
 
 
-.main-container {  
+.main-container {
   max-width: 980px;
   margin: 0 auto;
   padding-bottom: 0.33em;
@@ -56,7 +62,7 @@
 html, body {
   height: 100%;
   width: 100%;
-  
+
   color: #24292e;
   font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -76,6 +82,7 @@ h1 {
   font-size: 2em;
   padding-top: 0.67em;
   margin-bottom: 0.67em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 h2 {
@@ -87,11 +94,11 @@ h2 {
 p {
   margin-top: 1em;
   margin-bottom: 1em;
-  margin-left: 0.66em;  
+  margin-left: 0.66em;
 }
 
 li > p {
-  margin-left: 0;  
+  margin-left: 0;
 }
 
 ol,
@@ -111,7 +118,7 @@ a:hover {
 
 
 button {
-  padding: 2px 6px 3px;  
+  padding: 2px 6px 3px;
 }
 
 hr {
