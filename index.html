@@ -51,30 +51,54 @@
       background: linear-gradient(to left, #FFF, rgba(0, 0, 0, 0.06));
     }
 
-    .right-lateral {
+    .right-lateral {;
       justify-content: flex-start;
       background: linear-gradient(to right, #FFF, rgba(0, 0, 0, 0.06));
     }
 
     .inner-lateral {
+      z-index: 0;
       padding-top: 8px;
       margin: 0 16px;
       max-width: 400px;
       background-color: white;
-      box-shadow: 0 0 100px 0 rgba(255, 255, 255, 0.5),
-      0 0 100px 0 rgba(255, 255, 255, 1),
-      0 0 10px 0 rgba(255, 255, 255, 1),
-      0 0 50px 0 rgba(255, 255, 255, .5),
-      0 0 200px 0 rgba(255, 255, 255, 0.5);
+      box-shadow:
+        0   0   100px 0 rgba(255, 255, 255, 1),
+        0   0   100px 0 rgba(255, 255, 255, 1),
+        0   0    10px 0 rgba(255, 255, 255, 1),
+        0   0    50px 0 rgba(255, 255, 255, 1),
+        0 200px 200px 0 rgba(255, 255, 255, 1);
       align-self: flex-start;
+      border-radius: 8px;
+    }
+
+    :root {
+      --header-color: #1c1c1c;
     }
 
     .medial {
       padding: 0 16px;
     }
 
+    header {
+      min-height: 3em;
+    }
+
+    .medial-header {
+      background-color: var(--header-color);
+    }
+
+
+    .inner-header {
+      /*flex-grow: 1;*/
+      width: 100%;
+      color: #aaaaaa;
+      background-color: var(--header-color);
+      z-index: 10;
+    }
+
     @media screen and (min-width: 980px) {
-      .medial {
+      .medial, .medial-header {
         box-sizing: border-box;
         min-width: 980px;
         max-width: 980px;
@@ -82,7 +106,7 @@
     }
 
     @media screen and (max-width: 979px) {
-      .lateral {
+      .lateral, .inner-header:not(.medial-header) {
         display: none;
       }
     }
@@ -91,13 +115,53 @@
       .inner-lateral {
         display: none;
       }
+
+      .right-header > * {
+        display: none;
+      }
+
+      .left-header > * {
+        display: none;
+      }
     }
+
+    @media screen and (max-width: 319px) {
+      body {
+        display: flex;
+        overflow-x: auto;
+      }
+      .wrapper {
+        /*Позваоляет и хедеру, и контенту нормально оверлоувить*/
+      }
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+    }
+
+
+
   </style>
 
 </head>
 
 
 <body>
+
+<div class="wrapper">
+
+<header class="centering-boxes-row">
+  <div class="centering-boxes-row inner-header left-header">
+    <p>123</p>
+    <p>qwe</p>
+  </div>
+  <div class="centering-boxes-row inner-header medial-header">
+    <p>----456----</p>
+  </div>
+  <div class="centering-boxes-row inner-header right-header">
+    <p>789</p>
+  </div>
+</header>
+
 
 <div class="outer">
 
@@ -134,10 +198,10 @@
         <p><a href="/404.html">/404.html</a></p>
       </li>
       <li>
-        <p><a href="/404">/404</a>*</p>
+        <p><a href="/404">/404</a>* На GitHub'e работает – откроется 404.html без .html в адресе. </p>
       </li>
       <li>
-        <p><a href="/404/">/404/</a>*</p>
+        <p><a href="/404/">/404/</a>** Не найдется - код 404 - и редирект на 404.html </p>
       </li>
     </ul>
 
@@ -201,7 +265,7 @@
 
     <hr>
 
-    <h2>ul>li*50>lorem5</h2>
+    <h2>ul>li*50&shy;>lorem5</h2>
     <ul>
       <li>Lorem ipsum dolor sit amet.</li>
       <li>Labore illum quidem explicabo saepe.</li>
@@ -258,13 +322,16 @@
     <hr>
 
   </div>
+
   <div class="lateral right-lateral">
     <div class="inner-lateral">.inner <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet iusto, hic
       porro voluptatum. Iusto, beatae, sapiente. Expedita cum eum illo dolorum unde, minima reiciendis ducimus labore!
       Non adipisci omnis explicabo?</p></div>
   </div>
+
 </div>
 
+</div>
 </body>
 
 </html>
