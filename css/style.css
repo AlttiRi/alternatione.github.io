@@ -1,7 +1,38 @@
+/* Disable user agent CSS */
 
+* {
+  margin: 0;
+  padding: 0;
+
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+
+  box-sizing: border-box;
+  /*  border: 1px dotted;*/
+}
+
+/*---------------------------*/
+
+
+:root {
+  --header-bg-color: #1c1c1c;
+  --header-font-color: #aaa;
+  --h-font-color: #444;
+  --font-color: #24292e;
+  --link-color: #444;
+  --link-visited-color: #666;
+}
+
+
+/*---------------------------*/
+
+.radial-background {
+  background: radial-gradient(farthest-side ellipse at 50% 50%, white, rgba(0, 0, 0, 0.06));
+}
 
 .centering-lines {
   text-align: center;
+  padding-bottom: 0.001em;
 }
 
 .centering-boxes-column { /* Ширина блока – наибольшая длина содержимого */
@@ -31,12 +62,14 @@
   left: 0;
 }
 
-.radial-background {
-  background: radial-gradient(farthest-side ellipse at 50% 50%, white, rgba(0, 0, 0, 0.06));
+.footnote {
+  color: #888;
+  margin: 0;
 }
 
 
-.main-container {
+
+.main-container-old {
   flex-grow: 5;
   max-width: 980px;
   margin: 0 auto;
@@ -45,24 +78,73 @@
 
 
 
-/* Disable user agent CSS*/
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  flex-grow: 1;
 
-* {
-  margin: 0;
-  padding: 0;
-
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-
-  box-sizing: border-box;
-/*  border: 1px dotted;*/
+  min-height:100vh;
 }
+
+.outer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-grow: 10;
+}
+
+.lateral {
+  display: flex;
+  width: 100%;
+}
+
+.left-lateral {
+  justify-content: flex-end;
+  background: linear-gradient(to left, #FFF, rgba(0, 0, 0, 0.06));
+}
+
+.right-lateral {;
+  justify-content: flex-start;
+  background: linear-gradient(to right, #FFF, rgba(0, 0, 0, 0.06));
+}
+
+.inner-lateral {
+  z-index: 0;
+  padding-top: 8px;
+  margin: 0 16px;
+  max-width: 400px;
+  background-color: white;
+  box-shadow: 0 0 200px 200px rgba(255, 255, 255, 1);
+  align-self: flex-start;
+  border-radius: 8px;
+}
+
+.medial {
+  width: 100%;
+  z-index: 5;
+  padding: 0 16px;
+}
+
+.medial-header {
+  background-color: var(--header-bg-color);
+}
+
+
+.inner-header {
+  /*flex-grow: 1;*/ /*Иначе различное количество контента внутри будет влиять на размер*/
+  width: 100%;
+  color: var(--header-font-color);
+  background-color: var(--header-bg-color);
+  z-index: 10;
+}
+
+
 
 /* Standard tags */
 
-
 html {
-  color: #24292e;
+  color: var(--font-color);
   font-family: Tahoma, Geneva, Verdana, sans-serif;
 
   /* Scrollbar fix */
@@ -75,9 +157,13 @@ body {
   display: flex;
 }
 
+header {
+  min-height: 3em;
+}
+
 h1,
 h2 {
-  color: #444;
+  color: var(--h-font-color);
 }
 
 h1 {
@@ -112,11 +198,19 @@ ul {
 }
 
 a {
+  color: var(--link-color);
   text-decoration: none;
+  font-weight: 600;
+}
+
+a:visited {
+  color: var(--link-visited-color);
 }
 
 a:hover {
   text-decoration: underline;
+  /*text-decoration: none;*/
+  /*text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.25);*/
 }
 
 
@@ -131,6 +225,8 @@ hr {
   border: 0;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .25), rgba(0, 0, 0, 0) 90%);
 }
+
+/*---------------------selection------------------*/
 
 ::selection {
   background: #24292e;
@@ -160,9 +256,73 @@ hr {
   background-color: #999;
 }
 
+
 /*
 ::-webkit-scrollbar-button {
   height: 8px;
 }*/
 
 /*  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .10), rgba(0, 0, 0, 0) 90%);*/
+
+
+
+
+
+/*---------------------media------------------*/
+
+
+@media screen and (max-width: 1400px) {
+  .inner-lateral {
+    display: none;
+  }
+
+  .right-header > * {
+    display: none;
+  }
+
+  .left-header > * {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 980px) {
+  .medial, .medial-header {
+    min-width: 980px;
+    max-width: 980px;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .lateral, .inner-header:not(.medial-header) {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 319px) {
+  /* "overflow-x: auto;" - либо у body, либо у html */
+  body {
+    display: flex;
+    /* Можно скроллить везде, на компе скрол - в самом низу будет */
+    overflow-x: auto;
+  }
+  html {
+    /* Есть скролл на компе, нельзя скроллить на мобиле */
+    /*overflow-x: auto;*/
+  }
+
+  .wrapper {
+    align-self: stretch;
+    flex-grow: 1;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
