@@ -73,6 +73,7 @@
     }
 
     .medial {
+      width: 100%;
       z-index: 5;
       padding: 0 16px;
     }
@@ -97,7 +98,7 @@
     .wrapper {
       display: flex;
       flex-direction: column;
-      min-height:100%
+      min-height:100vh;
     }
 
     @media screen and (min-width: 980px) {
@@ -128,22 +129,52 @@
       }
     }
 
+    .wrapper{
+      min-height: available;
+      align-self: stretch;
+      flex-grow: 1;
+    }
+
+
     @media screen and (max-width: 319px) {
+      /* "overflow-x: auto;" - либо у body, либо у html */
       body {
         display: flex;
+        /* Можно скроллить везде, но нет скролла на компе */
         overflow-x: auto;
       }
+      html {
+        /* Есть скролл на компе, нельзя скроллить на мобиле */
+        /*overflow-x: auto;*/
+      }
+
       .wrapper {
-        /*Позваоляет и хедеру, и контенту нормально оверлоувить*/
+        align-self: stretch;
+        flex-grow: 1;
       }
       ::-webkit-scrollbar {
         width: 4px;
       }
     }
 
+    .hidden {
+      display: none;
+    }
 
 
   </style>
+
+
+  <script>
+    "use strict";
+    function swap() {
+      let elem = document.getElementById("swappable-content");
+      elem.classList.toggle("hidden");
+    }
+
+
+
+  </script>
 
 </head>
 
@@ -179,7 +210,7 @@
   </div>
 
   <div class="medial">
-    <h1 class="centering-lines">Hi there</h1>
+    <h1 class="centering-lines" onclick="swap();">Hi there</h1>
 
     <p><a href="https://github.com/AlttiRi?tab=repositories" rel="nofollow noopener" target="_blank">All of my
       repositories</a></p>
@@ -194,134 +225,139 @@
       </li>
     </ul>
 
-    <hr>
-    <ul>
-      <li>
-        <p><a href="/404.html">/404.html</a></p>
-      </li>
-      <li>
-        <p><a href="/404">/404</a>* На GitHub'e работает – откроется 404.html без .html в адресе. </p>
-      </li>
-      <li>
-        <p><a href="/404/">/404/</a>** Не найдется - код 404 - и редирект на 404.html </p>
-      </li>
-    </ul>
+    <div id="swappable-content" >
+      <p>loremloremloremloremloremloremlorem</p>
+      <hr>
+      <ul>
+        <li>
+          <p><a href="/404.html">/404.html</a></p>
+        </li>
+        <li>
+          <p><a href="/404">/404</a>* На GitHub'e работает – откроется 404.html без .html в адресе. </p>
+        </li>
+        <li>
+          <p><a href="/404/">/404/</a>** Не найдется - код 404 - и редирект на 404.html </p>
+        </li>
+      </ul>
 
-    <hr>
+      <hr>
 
-    <ul>
-      <li>
-        <p><a href="/examples/">/examples/</a></p>
-      </li>
-      <li>
-        <p><a href="/examples/opening-test/">/examples/opening-test/</a></p>
-      </li>
-    </ul>
+      <ul>
+        <li>
+          <p><a href="/examples/">/examples/</a></p>
+        </li>
+        <li>
+          <p><a href="/examples/opening-test/">/examples/opening-test/</a></p>
+        </li>
+      </ul>
 
-    <hr>
+      <hr>
 
-    <ul>
-      <li>
-        <p><a href="/examples/example-1.html">/examples/example-1.html</a></p>
-      </li>
-      <li>
-        <p><a href="/examples/test-page.html">/examples/test-page.html</a></p>
-      </li>
-      <li>
-        <p><a href="/examples/center.html">/examples/center.html</a></p>
-      </li>
-      <li>
-        <p><a href="/examples/anchors.html">/examples/anchors.html</a></p>
-      </li>
-    </ul>
+      <ul>
+        <li>
+          <p><a href="/examples/example-1.html">/examples/example-1.html</a></p>
+        </li>
+        <li>
+          <p><a href="/examples/test-page.html">/examples/test-page.html</a></p>
+        </li>
+        <li>
+          <p><a href="/examples/center.html">/examples/center.html</a></p>
+        </li>
+        <li>
+          <p><a href="/examples/anchors.html">/examples/anchors.html</a></p>
+        </li>
+      </ul>
 
-    <hr>
+      <hr>
 
-    <ul>
-      <li>
-        <p><a href="/examples/opening-test/page.html">/examples/opening-test/page.html</a></p>
-      </li>
-      <li>
-        <p><a href="/examples/opening-test/page">/examples/opening-test/page</a></p>
-      </li>
-      <li>
-        <p><a href="/examples/opening-test/page/">/examples/opening-test/page/</a></p>
-      </li>
-      <li>
-        <p><a href="/examples/opening-test/page/index.html">/examples/opening-test/page/index.html</a></p>
-      </li>
-      <li>
-        <p><a href="/examples/opening-test/page/index">/examples/opening-test/page/index</a>* </p>
-      </li>
-    </ul>
+      <ul>
+        <li>
+          <p><a href="/examples/opening-test/page.html">/examples/opening-test/page.html</a></p>
+        </li>
+        <li>
+          <p><a href="/examples/opening-test/page">/examples/opening-test/page</a></p>
+        </li>
+        <li>
+          <p><a href="/examples/opening-test/page/">/examples/opening-test/page/</a></p>
+        </li>
+        <li>
+          <p><a href="/examples/opening-test/page/index.html">/examples/opening-test/page/index.html</a></p>
+        </li>
+        <li>
+          <p><a href="/examples/opening-test/page/index">/examples/opening-test/page/index</a>* </p>
+        </li>
+      </ul>
 
-    <hr>
+      <hr>
 
-    <h2>Lorem</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dignissimos doloribus error excepturi expedita
-      hic illum ipsa labore laborum maxime nulla obcaecati officia pariatur provident quam, quasi rem reprehenderit
-      repudiandae. Lorem ipsum
-      dolor sit amet, consectetur adipisicing elit. Ab accusantium, aliquam, blanditiis culpa deserunt distinctio eos et
-      harum hic illo molestias nemo nisi pariatur reiciendis sequi ullam vel veritatis voluptatem.
-    </p>
+      <h2>Lorem</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dignissimos doloribus error excepturi expedita
+        hic illum ipsa labore laborum maxime nulla obcaecati officia pariatur provident quam, quasi rem reprehenderit
+        repudiandae. Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Ab accusantium, aliquam, blanditiis culpa deserunt distinctio eos et
+        harum hic illo molestias nemo nisi pariatur reiciendis sequi ullam vel veritatis voluptatem.
+      </p>
 
-    <hr>
+      <hr>
 
-    <h2>ul>li*50&shy;>lorem5</h2>
-    <ul>
-      <li>Lorem ipsum dolor sit amet.</li>
-      <li>Labore illum quidem explicabo saepe.</li>
-      <li>Similique nemo et, aspernatur alias!</li>
-      <li>Obcaecati sit reprehenderit, eaque cum.</li>
-      <li>Eveniet reiciendis molestiae quibusdam, nostrum.</li>
-      <li>Maiores quibusdam aliquam temporibus in?</li>
-      <li>Nesciunt, recusandae dolorum deleniti doloribus!</li>
-      <li>Totam quasi nam quisquam impedit.</li>
-      <li>Quia, pariatur ducimus voluptate modi!</li>
-      <li>Laudantium quas neque necessitatibus est.</li>
-      <li>Officiis molestias, voluptatum minus pariatur.</li>
-      <li>Perspiciatis aliquam, facere nostrum aperiam!</li>
-      <li>Iusto mollitia fuga harum vitae!</li>
-      <li>Quod dolorem sit, magni aspernatur.</li>
-      <li>Facilis, velit doloribus pariatur nihil.</li>
-      <li>Earum adipisci hic distinctio deleniti.</li>
-      <li>Culpa necessitatibus exercitationem, similique quaerat!</li>
-      <li>Repudiandae voluptas, reiciendis modi quo!</li>
-      <li>Sunt pariatur quo libero inventore.</li>
-      <li>Soluta, vel! Cum quidem, deserunt!</li>
-      <li>Ex exercitationem reprehenderit harum. Omnis.</li>
-      <li>Veniam sequi, eius et fugit.</li>
-      <li>Velit vel reprehenderit, dolorem sunt.</li>
-      <li>Sapiente maiores libero voluptatum laudantium.</li>
-      <li>Quod asperiores molestiae illum expedita.</li>
-      <li>Aliquam earum corrupti, rem reiciendis?</li>
-      <li>Animi reprehenderit, mollitia vitae omnis.</li>
-      <li>Libero vel atque quis consectetur!</li>
-      <li>Quibusdam minus rerum natus libero.</li>
-      <li>Nihil reprehenderit omnis maiores iste!</li>
-      <li>Unde natus sunt molestias sint.</li>
-      <li>Nemo commodi consequatur ipsam assumenda.</li>
-      <li>Eligendi tempore laboriosam, minima inventore.</li>
-      <li>Temporibus sunt, maiores debitis ut.</li>
-      <li>Molestiae aspernatur nostrum quibusdam expedita?</li>
-      <li>Explicabo accusamus ea facilis, alias!</li>
-      <li>Itaque esse eius eveniet, rerum?</li>
-      <li>Tempore at eligendi animi consequatur.</li>
-      <li>Fugit laboriosam, maxime amet nostrum.</li>
-      <li>Deleniti nihil ipsam, voluptatem porro.</li>
-      <li>Veniam eum modi, sint dolores.</li>
-      <li>Veniam voluptate temporibus quidem sapiente.</li>
-      <li>Totam dolores nihil, rerum ipsum!</li>
-      <li>Vitae explicabo itaque ea. Aspernatur.</li>
-      <li>Nobis odio tenetur consectetur nihil!</li>
-      <li>Exercitationem officia unde illo fugiat!</li>
-      <li>Et sed perspiciatis quaerat nostrum.</li>
-      <li>Aut quidem provident, ad optio.</li>
-      <li>Officia adipisci autem vitae sunt?</li>
-      <li>Possimus reiciendis magnam repudiandae! Nam.</li>
-    </ul>
+      <h2>ul>li*50&shy;>lorem5</h2>
+      <!--<h2>ul>li*50>lorem5</h2>-->
+      <ul>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Labore illum quidem explicabo saepe.</li>
+        <li>Similique nemo et, aspernatur alias!</li>
+        <li>Obcaecati sit reprehenderit, eaque cum.</li>
+        <li>Eveniet reiciendis molestiae quibusdam, nostrum.</li>
+        <li>Maiores quibusdam aliquam temporibus in?</li>
+        <li>Nesciunt, recusandae dolorum deleniti doloribus!</li>
+        <li>Totam quasi nam quisquam impedit.</li>
+        <li>Quia, pariatur ducimus voluptate modi!</li>
+        <li>Laudantium quas neque necessitatibus est.</li>
+        <li>Officiis molestias, voluptatum minus pariatur.</li>
+        <li>Perspiciatis aliquam, facere nostrum aperiam!</li>
+        <li>Iusto mollitia fuga harum vitae!</li>
+        <li>Quod dolorem sit, magni aspernatur.</li>
+        <li>Facilis, velit doloribus pariatur nihil.</li>
+        <li>Earum adipisci hic distinctio deleniti.</li>
+        <li>Culpa necessitatibus exercitationem, similique quaerat!</li>
+        <li>Repudiandae voluptas, reiciendis modi quo!</li>
+        <li>Sunt pariatur quo libero inventore.</li>
+        <li>Soluta, vel! Cum quidem, deserunt!</li>
+        <li>Ex exercitationem reprehenderit harum. Omnis.</li>
+        <li>Veniam sequi, eius et fugit.</li>
+        <li>Velit vel reprehenderit, dolorem sunt.</li>
+        <li>Sapiente maiores libero voluptatum laudantium.</li>
+        <li>Quod asperiores molestiae illum expedita.</li>
+        <li>Aliquam earum corrupti, rem reiciendis?</li>
+        <li>Animi reprehenderit, mollitia vitae omnis.</li>
+        <li>Libero vel atque quis consectetur!</li>
+        <li>Quibusdam minus rerum natus libero.</li>
+        <li>Nihil reprehenderit omnis maiores iste!</li>
+        <li>Unde natus sunt molestias sint.</li>
+        <li>Nemo commodi consequatur ipsam assumenda.</li>
+        <li>Eligendi tempore laboriosam, minima inventore.</li>
+        <li>Temporibus sunt, maiores debitis ut.</li>
+        <li>Molestiae aspernatur nostrum quibusdam expedita?</li>
+        <li>Explicabo accusamus ea facilis, alias!</li>
+        <li>Itaque esse eius eveniet, rerum?</li>
+        <li>Tempore at eligendi animi consequatur.</li>
+        <li>Fugit laboriosam, maxime amet nostrum.</li>
+        <li>Deleniti nihil ipsam, voluptatem porro.</li>
+        <li>Veniam eum modi, sint dolores.</li>
+        <li>Veniam voluptate temporibus quidem sapiente.</li>
+        <li>Totam dolores nihil, rerum ipsum!</li>
+        <li>Vitae explicabo itaque ea. Aspernatur.</li>
+        <li>Nobis odio tenetur consectetur nihil!</li>
+        <li>Exercitationem officia unde illo fugiat!</li>
+        <li>Et sed perspiciatis quaerat nostrum.</li>
+        <li>Aut quidem provident, ad optio.</li>
+        <li>Officia adipisci autem vitae sunt?</li>
+        <li>Possimus reiciendis magnam repudiandae! Nam.</li>
+      </ul>
 
-    <hr>
+      <hr>
+
+    </div>
 
   </div>
 

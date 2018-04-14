@@ -59,18 +59,19 @@
 
 /* Standard tags */
 
-html, body {
-  height: 100%;
-  width: 100%;
 
+html {
   color: #24292e;
   font-family: Tahoma, Geneva, Verdana, sans-serif;
-}
 
-/* Scrollbar fix */
-html {
+  /* Scrollbar fix */
   width: 100vw;
   overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  display: flex;
 }
 
 h1,
