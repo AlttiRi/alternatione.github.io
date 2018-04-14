@@ -43,6 +43,53 @@
     }
   </script>
 
+  <style>
+
+    .medial-header {
+      justify-items: center;
+      justify-content: space-between;
+    }
+    .inner-header p {
+      margin: 0;
+      padding: 0 2em;
+    }
+
+    .centering-boxes-in-columns {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .inner-header a {
+      color: #ddd;
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1);
+    }
+
+    .inner-header a:hover {
+      text-decoration: none;
+      color: #eee;
+      background-color: #76b900;
+      box-shadow: 0 0 2px 1px rgba(118, 185, 0, 0.3);
+    }
+
+    .avatar img {
+      display: block;
+      width: 55px;
+      height: 55px;
+      margin: 10px;
+    }
+
+    .avatar img:hover {
+      box-shadow: 0 0 2px 1px #AAA;
+    }
+
+
+  </style>
+
 </head>
 
 
@@ -51,15 +98,52 @@
 <div class="wrapper">
 
 <header class="centering-boxes-row">
+
   <div class="centering-boxes-row inner-header left-header">
-    <p>123</p>
-    <p>qwe</p>
+    <a href="#" class="centering-boxes-in-columns">
+      <p>123</p>
+    </a>
+    <a href="#" class="centering-boxes-in-columns">
+      <p>234</p>
+    </a>
   </div>
+
   <div class="centering-boxes-row inner-header medial-header">
-    <p>---<456>---</p>
+
+    <div class="avatar">
+      <a href="/"><img src="/apple-touch-icon.png" alt="avatar"></a>
+    </div>
+
+    <div class="nav-links">
+
+      <a href="#1" class="centering-boxes-in-columns">
+          <p>123_000</p>
+      </a>
+
+      <a href="#2" class="centering-boxes-in-columns">
+          <p>234</p>
+      </a>
+
+      <a href="#3" class="centering-boxes-in-columns">
+          <p>345-000-000</p>
+      </a>
+
+      <a href="#5" class="centering-boxes-in-columns">
+          <p>456</p>
+      </a>
+
+      <a href="#6" class="centering-boxes-in-columns">
+          <p>678</p>
+      </a>
+
+    </div>
+
+
   </div>
   <div class="centering-boxes-row inner-header right-header">
-    <p>789</p>
+    <a href="#" class="centering-boxes-in-columns">
+      <p>789</p>
+    </a>
   </div>
 </header>
 
