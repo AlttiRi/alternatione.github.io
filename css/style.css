@@ -26,6 +26,10 @@
 
 /*---------------------------*/
 
+.hidden {
+  display: none;
+}
+
 .radial-background {
   background: radial-gradient(farthest-side ellipse at 50% 50%, white, rgba(0, 0, 0, 0.06));
 }
@@ -237,7 +241,7 @@ hr {
 
 ::-webkit-scrollbar {
   width: 12px;
-  background-color: #f1f1f1;
+  /*background-color: #f1f1f1;*/
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
@@ -320,9 +324,4 @@ hr {
   ::-webkit-scrollbar {
     width: 4px;
   }
-
-  .hidden {
-    display: none;
-  }
 }
-
