@@ -280,11 +280,11 @@ hr {
     display: none;
   }
 
-  .right-header > * {
+  .right-header * {
     display: none;
   }
 
-  .left-header > * {
+  .left-header * {
     display: none;
   }
 }
