@@ -15,12 +15,14 @@
 
 
 :root {
-  --header-bg-color: #1c1c1c;
+  --header-bg-color: #24292e;
   --header-font-color: #aaa;
   --h-font-color: #444;
-  --font-color: #24292e;
+  --font-color: #1c1c1c;
   --link-color: #444;
-  --link-visited-color: #666;
+  --link-visited-color: #555;
+
+  --defaul-scrollbar-bg-color: #f1f1f1; /*rgba(241, 241, 241, 1) || rgba(0, 0, 0, 0.06) || hsla(0, 0%, 95%, 1)*/
 }
 
 
@@ -91,29 +93,29 @@
   min-height:100vh;
 }
 
-.outer {
+.content {
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-grow: 10;
 }
 
-.lateral {
+.lateral-content {
   display: flex;
   width: 100%;
 }
 
-.left-lateral {
+.left-lateral-content {
   justify-content: flex-end;
   background: linear-gradient(to left, #FFF, rgba(0, 0, 0, 0.06));
 }
 
-.right-lateral {;
+.right-lateral-content {;
   justify-content: flex-start;
   background: linear-gradient(to right, #FFF, rgba(0, 0, 0, 0.06));
 }
 
-.inner-lateral {
+.inner-lateral-content {
   z-index: 0;
   padding-top: 8px;
   margin: 0 16px;
@@ -124,7 +126,7 @@
   border-radius: 8px;
 }
 
-.medial {
+.medial-content {
   width: 100%;
   z-index: 5;
   padding: 0 16px;
@@ -143,7 +145,9 @@
   z-index: 10;
 }
 
-
+.header {
+  min-height: 3em;
+}
 
 /* Standard tags */
 
@@ -159,10 +163,6 @@ html {
 body {
   width: 100%;
   display: flex;
-}
-
-header {
-  min-height: 3em;
 }
 
 h1,
@@ -239,26 +239,26 @@ hr {
 
 /*-----------------webkit-scrollbar----------------*/
 
-::-webkit-scrollbar {
-  width: 12px;
-  /*background-color: #f1f1f1;*/
-}
+/*::-webkit-scrollbar {*/
+  /*width: 12px;*/
+  /*!*background-color: #f1f1f1;*!*/
+/*}*/
 
-::-webkit-scrollbar-thumb:window-inactive {
-  background-color: #ccc;
-}
+/*::-webkit-scrollbar-thumb:window-inactive {*/
+  /*background-color: #ccc;*/
+/*}*/
 
-::-webkit-scrollbar-thumb {
-  background-color: #bbb;
-}
+/*::-webkit-scrollbar-thumb {*/
+  /*background-color: #bbb;*/
+/*}*/
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: #aaa;
-}
+/*::-webkit-scrollbar-thumb:hover {*/
+  /*background-color: #aaa;*/
+/*}*/
 
-::-webkit-scrollbar-thumb:active {
-  background-color: #999;
-}
+/*::-webkit-scrollbar-thumb:active {*/
+  /*background-color: #999;*/
+/*}*/
 
 
 /*
@@ -276,7 +276,7 @@ hr {
 
 
 @media screen and (max-width: 1400px) {
-  .inner-lateral {
+  .inner-lateral-content {
     display: none;
   }
 
@@ -291,14 +291,14 @@ hr {
 
 
 @media screen and (min-width: 980px) {
-  .medial, .medial-header {
+  .medial-content, .medial-header {
     min-width: 980px;
     max-width: 980px;
   }
 }
 
-@media screen and (max-width: 979px) {
-  .lateral, .inner-header:not(.medial-header) {
+@media screen and (max-width: 980px) {
+  .lateral-content, .inner-header:not(.medial-header) {
     display: none;
   }
 }

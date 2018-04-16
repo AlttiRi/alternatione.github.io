@@ -47,8 +47,10 @@
 
     .medial-header {
       justify-items: center;
-      justify-content: space-between;
+      justify-content: space-between !important;
+      padding-right: 16px;
     }
+
     .inner-header p {
       margin: 0;
       padding: 0 2em;
@@ -66,7 +68,7 @@
     }
 
     .inner-header a {
-      color: #ddd;
+      color: #ddd !important;
       text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1);
     }
 
@@ -79,13 +81,13 @@
 
     .avatar img {
       display: block;
-      width: 55px;
-      height: 55px;
-      margin: 10px;
+      width: 46px;
+      height: 46px;
+      margin: 8px;
     }
 
     .avatar img:hover {
-      box-shadow: 0 0 2px 1px #AAA;
+      box-shadow: 0 0 2px 1px #aaa;
     }
 
 
@@ -98,9 +100,9 @@
 
 <div class="wrapper">
 
-<header class="centering-boxes-row">
+<header class="header centering-boxes-row">
 
-  <div class="centering-boxes-row inner-header left-header">
+  <div class="left-header inner-header centering-boxes-row">
     <a href="#" class="centering-boxes-in-columns">
       <p>123</p>
     </a>
@@ -109,7 +111,7 @@
     </a>
   </div>
 
-  <div class="centering-boxes-row inner-header medial-header">
+  <div class="medial-header inner-header centering-boxes-row">
 
     <div class="avatar">
       <a href="/"><img src="/apple-touch-icon.png" alt="avatar"></a>
@@ -139,9 +141,9 @@
 
     </nav>
 
-
   </div>
-  <div class="centering-boxes-row inner-header right-header">
+
+  <div class="right-header inner-header centering-boxes-row">
     <a href="#" class="centering-boxes-in-columns">
       <p>789</p>
     </a>
@@ -149,10 +151,10 @@
 </header>
 
 
-<div class="outer">
+<div class="content">
 
-  <div class="lateral left-lateral">
-    <div class="inner-lateral">.inner
+  <div class="left-lateral-content lateral-content">
+    <div class="inner-lateral-content">.inner-lateral-content
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos officia illo optio voluptates quo repellendus
         ullam earum accusantium nihil, minima asperiores ducimus sapiente sunt, minus, architecto nostrum perspiciatis
         numquam. Officia similique
@@ -161,7 +163,7 @@
     </div>
   </div>
 
-  <div class="medial">
+  <div class="medial-content">
     <h1 class="centering-lines" onclick="swap();" style="user-select: none;">Hi there</h1>
 
     <p><a href="https://github.com/AlttiRi?tab=repositories" rel="nofollow noopener" target="_blank">All of my
@@ -177,7 +179,7 @@
       </li>
     </ul>
 
-    <div id="swappable-content" >
+    <div id="swappable-content">
       <p>loremloremloremloremloremloremlorem</p>
       <hr>
       <ul>
@@ -200,6 +202,9 @@
         </li>
         <li>
           <p><a href="/examples/opening-test/">/examples/opening-test/</a></p>
+        </li>
+        <li>
+          <p><a href="/examples/scroll.html">/examples/scroll.html</a></p>
         </li>
       </ul>
 
@@ -313,8 +318,8 @@
 
   </div>
 
-  <div class="lateral right-lateral">
-    <div class="inner-lateral">.inner <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet iusto, hic
+  <div class="right-lateral-content lateral-content">
+    <div class="inner-lateral-content">.inner-lateral-content <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet iusto, hic
       porro voluptatum. Iusto, beatae, sapiente. Expedita cum eum illo dolorum unde, minima reiciendis ducimus labore!
       Non adipisci omnis explicabo?</p></div>
   </div>
