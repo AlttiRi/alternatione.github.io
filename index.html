@@ -89,41 +89,6 @@
         height: auto;
       }
 
-      .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        position: absolute;
-        right: 0;
-      }
-
-      .nav-links-wrapper {
-        position: relative;
-
-        display: none;
-        /*visibility: hidden;*/
-      }
-
-      .nav-wrapper p {
-        user-select: none;
-        font-size: 1.4em;
-        padding: 0 0.7em;
-      }
-
-      .nav-wrapper:hover {
-        color: #eee;
-        background-color: #76b900;
-        box-shadow: 0 0 2px 1px rgba(118, 185, 0, 0.3);
-      }
-
-      .nav-wrapper:hover .nav-links-wrapper {
-        display: flex;
-        /*visibility: visible;*/
-      }
-
-
-
-
       .inner-header a, .nav-wrapper {
         color: #ddd; /*!important*/
         text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1);
@@ -140,15 +105,43 @@
         box-shadow: 0 0 2px 1px rgba(118, 185, 0, 0.4);
       }
 
-
-      .nav-btn {
-        display: flex;
-        min-width: 62px;
-        min-height: 100%;
-        padding: 0 0.4em;
-        font-size: 1.4em;
-        font-weight: bold;
+      .nav-wrapper p {
         user-select: none;
+        font-size: 1.4em;
+        padding: 0 0.7em;
+      }
+
+      .nav-wrapper {
+        transition: 0s 0.150s; /*duration delay*/
+      }
+
+      .nav-wrapper:hover {
+        color: #eee;
+        background-color: #76b900;
+        box-shadow: 0 0 2px 1px rgba(118, 185, 0, 0.3);
+        transition-delay: 0s;
+      }
+
+      .nav-links-wrapper {
+        position: relative;
+      }
+
+      .nav-wrapper .nav-links-wrapper * {
+        visibility: hidden;
+        transition: 0s 0.150s;
+      }
+
+      .nav-wrapper:hover .nav-links-wrapper * {
+        visibility: visible;
+        transition-delay: 0s;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
       }
 
       .nav-links {
@@ -162,11 +155,22 @@
         box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
       }
 
+      .nav-btn {
+        display: flex;
+        min-width: 62px;
+        min-height: 100%;
+        padding: 0 0.4em;
+        font-size: 1.4em;
+        font-weight: bold;
+        user-select: none;
+      }
     }
 
+    .hidden {
+      display: none;
+    }
 
   </style>
-
 
 </head>
 
@@ -211,10 +215,10 @@
             <a href="#3" class="centering-boxes-in-columns">
               <p>345-000-000</p>
             </a>
-            <a href="#5" class="centering-boxes-in-columns">
+            <a href="#4" class="centering-boxes-in-columns">
               <p>456</p>
             </a>
-            <a href="#6" class="centering-boxes-in-columns">
+            <a href="#5" class="centering-boxes-in-columns">
               <p>678</p>
             </a>
 
