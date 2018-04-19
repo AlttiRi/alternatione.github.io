@@ -40,7 +40,7 @@ simple();
       isHover = true;
     }
 
-  });
+  }, {passive: true});
 
   wrapper.addEventListener("mouseleave", function (ev) {
 
