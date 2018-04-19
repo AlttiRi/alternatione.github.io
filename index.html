@@ -111,11 +111,11 @@
         padding: 0 0.7em;
       }
 
-      .nav-wrapper {
+      .nav-wrapper:not(.no-hover) {
         transition: 0s 0.150s; /*duration delay*/
       }
 
-      .nav-wrapper:hover {
+      .nav-wrapper:not(.no-hover):hover {
         color: #eee;
         background-color: #76b900;
         box-shadow: 0 0 2px 1px rgba(118, 185, 0, 0.3);
@@ -131,7 +131,12 @@
         transition: 0s 0.150s;
       }
 
-      .nav-wrapper:hover .nav-links-wrapper * {
+      .nav-wrapper.no-hover:hover .nav-links-wrapper * {
+        visibility: hidden;
+        transition: 0s 0s;
+      }
+
+      .nav-wrapper:not(.no-hover):hover .nav-links-wrapper * {
         visibility: visible;
         transition-delay: 0s;
       }
