@@ -7,30 +7,44 @@ function simple() {
 simple();
 
 
-let isHover = false;
+/**
+ * Добавляет возможность при повторном _таче_ по кнопке показа меню,
+ * закрывать меню.
+ *
+ * Поскольку клик будет считать также hover'ом, используется класс .no-hover,
+ * чтобы стили:hover при его наличии не работали. (:not(no-hover))
+ *
+ */
+(function makeBetterMobileMenu() {
 
-let btn = document.querySelector(".nav-btn");
-let links = document.querySelector(".nav-links-wrapper");
-let wrapper = document.querySelector(".nav-wrapper");
+  let isHover = false;
+
+  let btn = document.querySelector(".nav-btn");
+  // let links = document.querySelector(".nav-links-wrapper");
+  let wrapper = document.querySelector(".nav-wrapper");
 
 
+  btn.addEventListener("touchstart", function (ev) {
 
-btn.addEventListener("touchstart", function(ev) {
+    if (isHover) {
+      // links.setAttribute("style", "display:none;");
+      // links.classList.add("hidden");
+      wrapper.classList.add("no-hover");
 
-  if (isHover) {
-    // links.setAttribute("style", "display:none;");
-    links.classList.add("hidden");
+      isHover = false;
+    } else {
+      // links.setAttribute("style", "");
+      // links.classList.remove("hidden");
+      wrapper.classList.remove("no-hover");
+
+      isHover = true;
+    }
+
+  });
+
+  wrapper.addEventListener("mouseleave", function (ev) {
+
     isHover = false;
-  } else {
-    // links.setAttribute("style", "");
-    links.classList.remove("hidden");
-    isHover = true;
-  }
 
-});
-
-wrapper.addEventListener("mouseleave", function(ev) {
-
-  isHover = false;
-
-});
+  });
+})();
