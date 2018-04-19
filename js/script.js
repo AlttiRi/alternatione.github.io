@@ -9,24 +9,27 @@ simple();
 
 let isHover = false;
 
-let elem = document.querySelector("div.nav-btn");
+let btn = document.querySelector(".nav-btn");
 let links = document.querySelector(".nav-links-wrapper");
-console.log(elem);
+let wrapper = document.querySelector(".nav-wrapper");
 
 
-elem.addEventListener("touchstart", function(e) {
+
+btn.addEventListener("touchstart", function(ev) {
 
   if (isHover) {
-    links.setAttribute("style", "display:none;");
+    // links.setAttribute("style", "display:none;");
+    links.classList.add("hidden");
     isHover = false;
   } else {
-    links.setAttribute("style", "");
+    // links.setAttribute("style", "");
+    links.classList.remove("hidden");
     isHover = true;
   }
 
 });
 
-elem.addEventListener("mouseleave", function(e) {
+wrapper.addEventListener("mouseleave", function(ev) {
 
   isHover = false;
 
