@@ -100,7 +100,7 @@
         padding: 0 0.7em;
       }
 
-      .nav-wrapper:not(.no-hover) {
+      .nav-wrapper:not(.no-hover).ready-for-transient {
         transition: 0s 0.150s; /*duration delay*/
       }
 
@@ -115,9 +115,12 @@
         position: relative;
       }
 
+      .nav-wrapper.ready-for-transient .nav-links-wrapper * {
+        transition: 0s 0.150s;
+      }
+
       .nav-wrapper .nav-links-wrapper * {
         visibility: hidden;
-        transition: 0s 0.150s;
       }
 
       .nav-wrapper.no-hover:hover .nav-links-wrapper * {
@@ -160,7 +163,7 @@
       }
     }
 
-    /*Used by JS*/
+/* ---- Used by JS ---- */
     .hidden {
       display: none;
     }
@@ -169,6 +172,7 @@
       user-select: none;
       cursor: pointer;
     }
+
 
   </style>
 
@@ -263,6 +267,8 @@
           <p><a href="/codecademy/">/codecademy/</a></p>
         </li>
       </ul>
+
+      <!--<div id="logger"></div>-->
 
       <div id="swappable-content">
         <p>loremloremloremloremloremlorem</p>
