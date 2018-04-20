@@ -1,10 +1,31 @@
 'use strict';
 
-function simple() {
-  console.log("It's working [AlttiRi.github.io]");
-}
 
-simple();
+testConsoleOutput();
+
+
+
+
+/**
+ * По клику  по #swapper
+ * уберает/показывает содержимое #swappable-content
+ */
+(function addSwapperListener() {
+
+  let elem = document.getElementById("swapper");
+
+  if (!elem) {
+    return;
+  }
+
+  elem.addEventListener("click", swap);
+
+})();
+
+function swap() {
+  let elem = document.getElementById("swappable-content");
+  elem.classList.toggle("hidden");
+}
 
 
 /**
@@ -20,23 +41,20 @@ simple();
   let isHover = false;
 
   let btn = document.querySelector(".nav-btn");
-  // let links = document.querySelector(".nav-links-wrapper");
   let wrapper = document.querySelector(".nav-wrapper");
+
+  if (!btn || !wrapper) {
+    return;
+  }
 
 
   btn.addEventListener("touchstart", function (ev) {
 
     if (isHover) {
-      // links.setAttribute("style", "display:none;");
-      // links.classList.add("hidden");
       wrapper.classList.add("no-hover");
-
       isHover = false;
     } else {
-      // links.setAttribute("style", "");
-      // links.classList.remove("hidden");
       wrapper.classList.remove("no-hover");
-
       isHover = true;
     }
 
@@ -47,4 +65,14 @@ simple();
     isHover = false;
 
   });
+
 })();
+
+
+/**
+ * Просто для проверки работs JS.
+ */
+
+function testConsoleOutput() {
+  console.log("It's working [AlttiRi.github.io]");
+}
