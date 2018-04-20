@@ -1,39 +1,50 @@
 "use strict";
 
 
-
 function addMenuTransient() {
 
     let widthWhenMenu = 680; // Ширина, при которой появляется мобильное меню
     let navWrapper = document.querySelector(".nav-wrapper");
     if (!navWrapper) {
+        console.log("[addMenuTransient] .nav-wrapper not found");
         return;
     }
 
     window.addEventListener("DOMContentLoaded", function () {
-        let intFrameWidth = window.innerWidth;
+        let windowWidth = window.innerWidth;
 
-        if (intFrameWidth <= widthWhenMenu) {
+        if (windowWidth <= widthWhenMenu) {
             navWrapper.classList.add("ready-for-transient");
         }
     });
 
     window.addEventListener("resize", function () {
 
-        let intFrameWidth = window.innerWidth;
+        let windowWidth = window.innerWidth;
 
-        // let elem = document.getElementById("logger");
-        // if (!elem) {
-        //     return;
-        // }
-        // elem.innerText = `Width ${intFrameWidth.toString()}`;
-
-        if (intFrameWidth <= widthWhenMenu) {
+        if (windowWidth <= widthWhenMenu) {
             navWrapper.classList.add("ready-for-transient");
         } else {
             navWrapper.classList.remove("ready-for-transient");
         }
     });
+
+}
+
+function logger() {
+
+    let logger = document.getElementById("logger");
+    if (!logger) {
+        console.log("[EventListener(\"resize\")] #logger not found");
+        return;
+    }
+
+    let logWidth = () => {
+        logger.innerText = `Width is ${window.innerWidth}px`
+    };
+    logWidth();
+
+    window.addEventListener("resize", logWidth);
 
 }
 
@@ -53,6 +64,7 @@ function addSwapperListener() {
     let elem = document.getElementById("swapper");
 
     if (!elem) {
+        console.log("[addSwapperListener] #swapper not found");
         return;
     }
 
@@ -78,6 +90,7 @@ function addClosingMenuOnTouch() {
     let wrapper = document.querySelector(".nav-wrapper");
 
     if (!btn || !wrapper) {
+        console.log("[addClosingMenuOnTouch] .nav-btn || .nav-wrapper not found");
         return;
     }
 
@@ -114,6 +127,7 @@ function testConsoleOutput() {
 testConsoleOutput();
 
 addSwapperListener();
+logger();
 
 addClosingMenuOnTouch();
 addMenuTransient();
