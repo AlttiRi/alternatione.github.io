@@ -35,17 +35,6 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
 
 
-
-
-  <script>
-    "use strict";
-
-    function swap() {
-      let elem = document.getElementById("swappable-content");
-      elem.classList.toggle("hidden");
-    }
-  </script>
-
   <style>
 
     .nav-wrapper, .nav-links-wrapper, .nav-links {
@@ -171,8 +160,14 @@
       }
     }
 
+    /*Used by JS*/
     .hidden {
       display: none;
+    }
+
+    #swapper {
+      user-select: none;
+      cursor: pointer;
     }
 
   </style>
@@ -254,7 +249,7 @@
     </div>
 
     <div class="medial-content">
-      <h1 class="centering-lines" onclick="swap();" style="user-select: none;">Hi there</h1>
+      <h1 class="centering-lines" id="swapper">Hi there</h1>
 
       <p><a href="https://github.com/AlttiRi?tab=repositories" rel="nofollow noopener" target="_blank">All of my
         repositories</a></p>
