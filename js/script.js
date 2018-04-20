@@ -5,25 +5,21 @@
 function addMenuTransient() {
 
     let widthWhenMenu = 680; // Ширина, при которой появляется мобильное меню
+    let navWrapper = document.querySelector(".nav-wrapper");
+    if (!navWrapper) {
+        return;
+    }
 
     window.addEventListener("DOMContentLoaded", function () {
         let intFrameWidth = window.innerWidth;
 
         if (intFrameWidth <= widthWhenMenu) {
-            let navWrapper = document.querySelector(".nav-wrapper");
-            if (!navWrapper) {
-                return;
-            }
             navWrapper.classList.add("ready-for-transient");
         }
     });
 
     window.addEventListener("resize", function () {
 
-        let navWrapper = document.querySelector(".nav-wrapper");
-        if (!navWrapper) {
-            return;
-        }
         let intFrameWidth = window.innerWidth;
 
         // let elem = document.getElementById("logger");
