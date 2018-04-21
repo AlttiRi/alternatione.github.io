@@ -107,11 +107,25 @@ function addClosingMenuOnTouch() {
 
     }, {passive: true});
 
-    wrapper.addEventListener("mouseleave", function () {
 
-        isHover = false;
 
-    });
+    let hoverDisable = () => {
+        wrapper.addEventListener("mouseleave", () => {
+            console.log("Invoke .nav-wrapper[EventListener(\"mouseleave\"] {sHover = false;}");
+            isHover = false;
+        });
+        console.log("Add .nav-wrapper[EventListener(\"mouseleave\"] {sHover = false;}");
+
+        btn.removeEventListener("touchstart", hoverDisable);
+        console.log("Remove .nav-btn[EventListener(\"touchstart\"] {hoverDisable}");
+    };
+
+    /**
+     * Вызовется только на первый тач, т.е. hoverDisable удалит этот листенер
+     */
+    btn.addEventListener("touchstart", hoverDisable, {passive: true});
+    console.log("Add .nav-btn[EventListener(\"touchstart\"] {hoverDisable}");
+
 
 }
 
