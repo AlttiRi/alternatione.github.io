@@ -1,0 +1,22 @@
+{
+  "name": "alttiri-github-io",
+  "version": "1.0.0",
+  "description": "Site on GitHub Pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlttiRi/alttiri.github.io"
+  },
+  "keywords": [
+    "site"
+  ],
+  "author": "AlttiRi",
+  "license": "",
+  "dependencies": {},
+  "devDependencies": {
+    "sitemap-generator": "^8.1.0"
+  }
+}
