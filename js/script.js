@@ -33,14 +33,14 @@ function addMenuTransient() {
 
 function logger() {
 
-    let logger = document.getElementById("logger");
-    if (!logger) {
+    let logElement = document.getElementById("logger");
+    if (!logElement) {
         console.log("[EventListener(\"resize\")] #logger not found");
         return;
     }
 
     let logWidth = () => {
-        logger.innerText = `Width is ${window.innerWidth}px`
+        logElement.innerText = `Width is ${window.innerWidth}px. Height is ${window.innerHeight}px.`;
     };
     logWidth();
 
@@ -111,20 +111,20 @@ function addClosingMenuOnTouch() {
 
     let hoverDisable = () => {
         wrapper.addEventListener("mouseleave", () => {
-            console.log("Invoke .nav-wrapper[EventListener(\"mouseleave\"] {sHover = false;}");
+            console.log("Invoke .nav-wrapper[EventListener(\"mouseleave\")] {isHover = false;}");
             isHover = false;
         });
-        console.log("Add .nav-wrapper[EventListener(\"mouseleave\"] {sHover = false;}");
+        console.log("Add .nav-wrapper[EventListener(\"mouseleave\")] {isHover = false;}");
 
         btn.removeEventListener("touchstart", hoverDisable);
-        console.log("Remove .nav-btn[EventListener(\"touchstart\"] {hoverDisable}");
+        console.log("Remove .nav-btn[EventListener(\"touchstart\")] {hoverDisable}");
     };
 
     /**
-     * Вызовется только на первый тач, т.е. hoverDisable удалит этот листенер
+     * Вызовется только на первый тач, т.к. hoverDisable удалит этот листенер
      */
     btn.addEventListener("touchstart", hoverDisable, {passive: true});
-    console.log("Add .nav-btn[EventListener(\"touchstart\"] {hoverDisable}");
+    console.log("Add .nav-btn[EventListener(\"touchstart\")] {hoverDisable}");
 
 
 }
