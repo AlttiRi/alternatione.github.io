@@ -1,0 +1,7 @@
+Host: https://alttiri.github.io
+
+User-agent: *
+Disallow: https://alttiri.github.io/codecademy/Learn%20HTML%20%26%20CSS/
+Disallow: https://alttiri.github.io/codecademy/Learn%20Responsive%20Design/
+Disallow: https://alttiri.github.io/codecademy/Make%20a%20Website/
+Sitemap: https://alttiri.github.io/sitemap.xml
