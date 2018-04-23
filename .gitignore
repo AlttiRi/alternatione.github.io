@@ -8,7 +8,7 @@
 # Eclipse project files
 .classpath
 .project
- 
+
 # Java class files
 *.class
 
@@ -21,3 +21,6 @@ target
 
 # Other project folder
 codecademy/
+
+# NPM
+node_modules/
