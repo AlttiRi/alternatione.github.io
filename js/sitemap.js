@@ -1,11 +1,11 @@
 
+const SitemapGenerator = require("sitemap-generator");
+
 const siteURL = "https://alttiri.github.io";
 
 
 
 console.log("-- sitemap-generator --");
-
-const SitemapGenerator = require("sitemap-generator");
 
 // create generator
 const generator = SitemapGenerator(siteURL, {
