@@ -18,6 +18,7 @@
   "license": "",
   "dependencies": {},
   "devDependencies": {
-    "sitemap-generator": "^8.1.0"
+    "sitemap-generator": "^8.1.0",
+    "live-server": "^1.2.0"
   }
 }

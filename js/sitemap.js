@@ -1,3 +1,6 @@
+/**
+ * https://github.com/lgraubner/sitemap-generator
+ */
 
 const SitemapGenerator = require("sitemap-generator");
 
