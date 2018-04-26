@@ -1,11 +1,13 @@
+"use strict";
+
 /**
  * https://github.com/tapio/live-server
  */
 
-let liveServer = require("live-server");
-let path = require("path");
+const liveServer = require("live-server");
+const path = require("path");
 
-let projectDir = path.resolve("../");
+let projectDir = path.resolve(__dirname, "../");
 
 let params = {
     port: 8080,  // Set the server port. Defaults to 8080.

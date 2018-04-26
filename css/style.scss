@@ -1,15 +1,7 @@
-/* Disable user agent CSS */
+/*@import url("./normalize.css");*/
+@import url("./base.scss");
 
-* {
-  margin: 0;
-  padding: 0;
 
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-
-  box-sizing: border-box;
-  /*  border: 1px dotted;*/
-}
 
 /*---------------------------*/
 
