@@ -122,6 +122,7 @@ function addClosingMenuOnTouch() {
 
     /**
      * Вызовется только на первый тач, т.к. hoverDisable удалит этот листенер
+     * TODO use {once:true}
      */
     btn.addEventListener("touchstart", hoverDisable, {passive: true});
     console.log("Add .nav-btn[EventListener(\"touchstart\")] {hoverDisable}");
