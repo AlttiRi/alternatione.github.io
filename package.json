@@ -16,9 +16,11 @@
   ],
   "author": "AlttiRi",
   "license": "",
-  "dependencies": {},
+  "dependencies": {
+    "npm": "^6.7.0"
+  },
   "devDependencies": {
-    "sitemap-generator": "^8.1.0",
-    "live-server": "^1.2.0"
+    "live-server": "^1.2.1",
+    "sitemap-generator": "^8.3.2"
   }
 }
