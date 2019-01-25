@@ -21,16 +21,16 @@
   "license": "",
   "dependencies": {},
   "devDependencies": {
-    "node-sass": "^4.9.3",
-    "autoprefixer": "^9.1.5",
-    "clean-css-cli": "^4.2.1",
+    "autoprefixer": "^9.4.6",
     "clean-css": "^4.2.1",
-    "precss": "^3.1.2",
-    "postcss-clean": "^1.1.0",
-    "postcss-cli": "^6.0.0",
-    "postcss": "^7.0.5",
+    "clean-css-cli": "^4.2.1",
+    "live-server": "^1.2.1",
     "multi-stage-sourcemap": "^0.3.1",
-    "sitemap-generator": "^8.3.1",
-    "live-server": "^1.2.0"
+    "node-sass": "^4.11.0",
+    "postcss": "^7.0.14",
+    "postcss-clean": "^1.1.0",
+    "postcss-cli": "^6.1.1",
+    "precss": "^4.0.0",
+    "sitemap-generator": "^8.3.2"
   }
 }
