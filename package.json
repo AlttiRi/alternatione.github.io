@@ -19,6 +19,6 @@
   "dependencies": {},
   "devDependencies": {
     "live-server": "^1.2.1",
-    "sitemap-generator": "^8.3.2"
+    "sitemap-generator": "^8.5.0"
   }
 }
